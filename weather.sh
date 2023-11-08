@@ -4,7 +4,7 @@
 if ! command -v jq &> /dev/null; then
 echo "oww, it seems that you don't have jq JSON pawsew installed... pwease do :3"
 echo "apt: sudo apt-get install jq"
-echo "pacman: "
+echo "pacman: sudo pacman -S jq"
 echo "xbps: sudo xbps-install -S jq"
     exit 1
 fi
