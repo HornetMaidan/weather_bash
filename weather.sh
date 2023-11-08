@@ -26,7 +26,7 @@ api_url="https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&units
 #echo $api_url
 weather_data=$(curl -s $api_url)
 #echo $weather_data
-weather_desc=$(echo $weather_data | jq -r '.weather.[].description')
+weather_desc=$(echo $weather_data | jq -r '.weather[].description')
 
 city=$(echo $weather_data | jq -r '.name')
 if [[ "$city" == "Nur-Sultan" ]] ; then
