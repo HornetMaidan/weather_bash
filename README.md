@@ -7,6 +7,11 @@ a considerable amount of uwu is present
 -------------------------------------------------
 to-do:
 
-#colorcode the output\
-#automatic detection of packet manager to install jq(at least apt/pacman/xbps/etc..)\
-#uwufy everything
+v.0.2
+#colorcode the output --- DONE\
+#automatic detection of packet manager to install jq(at least apt/pacman/xbps/etc..) --- DONE(semi-auto preferred)\
+#uwufy everything --- DONE(though it's a constant process)
+
+v.0.3
+#add 24-hour forecast as an option
+#add ANSI/ASCII art as icons for weather descriptions(not sure yet)

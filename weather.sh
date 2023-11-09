@@ -2,13 +2,13 @@
 
 #to-do:
 #colorcode the output --- DONE
-#automatic detection of packet manager to install jq(at least apt/pacman/xbps/etc..) --- DONE
+#automatic detection of package manager to install jq(at least apt/pacman/xbps/etc..) --- DONE(semi-auto preferred)
 #uwufy everything --- DONE uwu~
 
 #verify if user has jq installed
 if ! command -v jq &> /dev/null; then
 echo "oww, it seems that you don't have jq JSON pawsew installed... pwease do :3"
-echo "sewect youw packet managew..."
+echo "sewect youw package managew..."
 echo "[1] apt"
 echo "[2] pacman"
 echo "[3] xbps"
