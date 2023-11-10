@@ -13,5 +13,9 @@ v.0.2\
 #uwufy everything --- DONE(though it's a constant process)\
 
 v.0.3\
-#add 24-hour forecast as an option\
-#add ANSI/ASCII art as icons for weather descriptions(not sure yet)
+#add 24-hour forecast as an option --- DONE\
+#add ANSI/ASCII art as icons for weather descriptions(not sure yet) --- DISCARDED\
+#CLI overhaul for new features --- DONE\
+
+v.1.0(initial release)\
+#TBA
