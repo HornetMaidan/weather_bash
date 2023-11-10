@@ -68,9 +68,9 @@ echo ""
 echo -e "\t\e[37mhewwo \e[35m$USER!\e[37m i hope u awe doing gweat today!\e[0m"
 echo -e "\t\e[37mhewe is the cuwwent weathew wepowt fow \e[32m$city\e[37m uwu~\e[0m"
 echo
-echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' =)\e[0m"
+echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' =)\e[0m"
 echo -e "\e[32m\t$(pad_string "cuwwent" 40) fowecast"
-echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)\e[0m"
+echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' -)\e[0m"
 echo
 echo -e "\t$(pad_string "\e[37mtime: $(date +"%H:%M")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[0].dt_txt' | sed 's#-#/#g;s#...$##;') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[0].weather[].description, .list[0].main.temp] | join(", ")')°C\e[0m"
 echo -e "\t$(pad_string "\e[37mdate: $(date +"%d/%m/%Y")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[1].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[1].weather[].description, .list[1].main.temp] | join(", ")')°C\e[0m"
@@ -79,7 +79,7 @@ echo -e "\t$(pad_string "\e[37mtempewature: \e[35m$(echo "$weather_data" | jq -r
 echo -e "\t$(pad_string "\e[37mwind: \e[37m\e[36m$(echo "$weather_data" | jq -r '.wind.speed')m/s, azimuth: $(echo "$weather_data" | jq -r '.wind.deg')\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[4].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[4].weather[].description, .list[4].main.temp] | join(", ")')°C\e[0m"
 echo -e "\t$(pad_string "\e[37mcwouds: \e[37m\e[34m$(echo "$weather_data" | jq -r '.clouds.all')%\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[5].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[5].weather[].description, .list[5].main.temp] | join(", ")')°C\e[0m"
 echo
-echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -)\e[0m"
+echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' -)\e[0m"
 if [[ "$weather_desc" == "clear sky" ]]; then
     echo -e "\t\e[33mseems to be a pwetty cleaw sky today!\e[0m"
 elif [[ "$weather_desc" == *"clouds"* ]]; then
@@ -93,4 +93,4 @@ elif [[ "$weather_desc" == *"snow"* ]]; then
 elif [[ "$weather_desc" == "fog" || "$weather_desc" == "mist" ]]; then
     echo -e "\t\e[31mthe fog is coming uwu~\e[0m"
 fi
-echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' =)\e[0m"
+echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' =)\e[0m"
