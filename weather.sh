@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#to-do:
-#colorcode the output --- DONE
-#automatic detection of package manager to install jq(at least apt/pacman/xbps/etc..) --- DONE(semi-auto preferred)
-#uwufy everything --- DONE uwu~
-#add 24-hour forecast as an option --- DONE
-#add ANSI/ASCII art as icons for weather descriptions(not sure yet) --- DISCARDED
-
 #verify if user has jq installed
 if ! command -v jq &> /dev/null; then
 echo "oww, it seems that you don't have jq JSON pawsew installed... pwease do :3"
@@ -31,6 +24,8 @@ case $choice in
     esac
 fi
 
+#formatting the output
+
 strip_ansi_escape_codes() {
     echo -ne "$1" | sed "s,\x1B\[[0-9;]*[a-zA-Z],,g"
 }
@@ -42,6 +37,8 @@ pad_string() {
     local spaces=$((length - ${#stripped}))
     printf "%s%*s" "$string" "$spaces" ""
 }
+
+#api requests
 
 api_key="a6c3cfde026d31b995612c6f169203a7"
 ipinfo_key="bd1acc5f04e870"
@@ -64,6 +61,8 @@ city=$(echo "$weather_data" | jq -r '.name')
 if [[ "$city" == "Nur-Sultan" ]] ; then
 city='Astana';
 fi
+
+#cli output
 
 echo ""
 echo -e "\t\e[37mhewwo \e[35m$USER!\e[37m i hope u awe doing gweat today!\e[0m"
