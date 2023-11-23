@@ -58,6 +58,7 @@ weather_data=$(curl -s "$api_url")
 forecast_data=$(curl -s "$forecast_url")
 
 weather_desc=$(echo "$weather_data" | jq -r '.weather[].description')
+wind_speed=$(echo "$weather_data" | jq -r '.wind.speed')
 
 city=$(echo "$weather_data" | jq -r '.name')
 if [[ "$city" == "Nur-Sultan" ]] ; then
@@ -72,12 +73,12 @@ echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' 
 echo -e "\e[32m\t$(pad_string "cuwwent" 40) fowecast"
 echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' -)\e[0m"
 echo
-echo -e "\t$(pad_string "\e[37mtime: $(date +"%H:%M")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[0].dt_txt' | sed 's#-#/#g;s#...$##;') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[0].weather[].description, .list[0].main.temp] | join(", ")')°C\e[0m"
-echo -e "\t$(pad_string "\e[37mdate: $(date +"%d/%m/%Y")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[1].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[1].weather[].description, .list[1].main.temp] | join(", ")')°C\e[0m"
-echo -e "\t$(pad_string "weathew: \e[33m\e[5m$(echo "$weather_data" | jq -r '.weather[].description')\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[2].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[2].weather[].description, .list[2].main.temp] | join(", ")')°C\e[0m"
-echo -e "\t$(pad_string "\e[37mtempewature: \e[35m$(echo "$weather_data" | jq -r '.main.temp')°C\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[3].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[3].weather[].description, .list[3].main.temp] | join(", ")')°C\e[0m"
-echo -e "\t$(pad_string "\e[37mwind: \e[37m\e[36m$(echo "$weather_data" | jq -r '.wind.speed')m/s, azimuth: $(echo "$weather_data" | jq -r '.wind.deg')\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[4].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[4].weather[].description, .list[4].main.temp] | join(", ")')°C\e[0m"
-echo -e "\t$(pad_string "\e[37mcwouds: \e[37m\e[34m$(echo "$weather_data" | jq -r '.clouds.all')%\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[5].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[5].weather[].description, .list[5].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "\e[37mtime: $(date +"%H:%M")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[2].dt_txt' | sed 's#-#/#g;s#...$##;') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[0].weather[].description, .list[0].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "\e[37mdate: $(date +"%d/%m/%Y")" 40)\e[0m $(echo "$forecast_data" | jq -r '.list[3].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[1].weather[].description, .list[1].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "weathew: \e[33m\e[5m$(echo "$weather_data" | jq -r '.weather[].description')\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[4].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[2].weather[].description, .list[2].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "\e[37mtempewatuwe: \e[35m$(echo "$weather_data" | jq -r '.main.temp')°C\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[5].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[3].weather[].description, .list[3].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "\e[37mwind: \e[37m\e[36m$(echo "$weather_data" | jq -r '.wind.speed')m/s, azimuth: $(echo "$weather_data" | jq -r '.wind.deg')\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[6].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[4].weather[].description, .list[4].main.temp] | join(", ")')°C\e[0m"
+echo -e "\t$(pad_string "\e[37mcwouds: \e[37m\e[34m$(echo "$weather_data" | jq -r '.clouds.all')%\e[0m" 40) $(echo "$forecast_data" | jq -r '.list[7].dt_txt' | sed 's#-#/#g;s#...$##') ----- \e[33m$(echo "$forecast_data" | jq -r '[.list[5].weather[].description, .list[5].main.temp] | join(", ")')°C\e[0m"
 echo
 echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' -)\e[0m"
 if [[ "$weather_desc" == "clear sky" ]]; then
@@ -91,6 +92,15 @@ elif [[ "$weather_desc" == *"thunderstorm"* ]]; then
 elif [[ "$weather_desc" == *"snow"* ]]; then
     echo -e "\t\e[37mthewe is going to be snow today! be caweful outside~\e[0m"
 elif [[ "$weather_desc" == "fog" || "$weather_desc" == "mist" ]]; then
-    echo -e "\t\e[31mthe fog is coming uwu~\e[0m"
+    echo -e "\t\e[31mthe fog is coming owo~\e[0m"
 fi
+
+if [ "$wind_speed" -gt 8 ] ; then
+    echo -e "\t\e[36mwind is stwong, be caweful!\e[0m"
+fi    
+
+if [ "$(date +"%d/%m")" == "31/12" ]; then
+    echo -e "\t\e[35m\e[5mhappy new yeaw!!! >w<\e[0m"
+fi
+
 echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' =)\e[0m"
