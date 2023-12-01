@@ -94,7 +94,8 @@ elif [[ "$weather_desc" == "fog" || "$weather_desc" == "mist" ]]; then
     echo -e "\t\e[31mthe fog is coming owo~\e[0m"
 fi
 
-if [ "$wind_speed" -gt 8 ] ; then
+wind_speed_rounded=$(echo "$wind_speed" | awk '{ print int($1) }')
+if [ "$wind_speed_rounded" -gt 8 ] ; then
     echo -e "\t\e[36mwind is stwong, be caweful!\e[0m"
 fi    
 
