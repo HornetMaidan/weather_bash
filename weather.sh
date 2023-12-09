@@ -13,13 +13,13 @@ echo "[6] brew"
 echo "[7] zypper"
 read -rp "youw choice: " choice
 case $choice in
-    1) sudo apt-get update && sudo apt-get install jq ;;
-    2) sudo pacman --sync jq ;;
-    3) sudo xbps-install -S jq ;;
-    4) sudo yum install epel-release && sudo yum install jq ;;
-    5) sudo dnf install jq ;;
-    6) brew install jq ;;
-    7) sudo zypper install jq ;;
+    1) sudo apt-get update && sudo apt-get install jq awk;;
+    2) sudo pacman --sync jq awk;;
+    3) sudo xbps-install -S jq awk;;
+    4) sudo yum install epel-release && sudo yum install jq awk ;;
+    5) sudo dnf install jq awk;;
+    6) brew install jq awk;;
+    7) sudo zypper install jq awk ;;
     *) echo "oww, you've done a fucky wucky! twy again ow install it manually~"; exit 1 ;;
     esac
 fi
@@ -92,6 +92,8 @@ elif [[ "$weather_desc" == *"snow"* ]]; then
     echo -e "\t\e[37mthewe is going to be snow today! be caweful outside~\e[0m"
 elif [[ "$weather_desc" == "fog" || "$weather_desc" == "mist" ]]; then
     echo -e "\t\e[31mthe fog is coming owo~\e[0m"
+elif [[ "$weather_desc" == "smoke" || "$weather_desc" == "haze" ]]; then
+    echo -e "\t\e[31msomebody is gwilling weally hawd today!! expect some smoke~\e[0m"
 fi
 
 wind_speed_rounded=$(echo "$wind_speed" | awk '{ print int($1) }')
@@ -101,6 +103,15 @@ fi
 
 if [ "$(date +"%d/%m")" == "31/12" ]; then
     echo -e "\t\e[35m\e[5mhappy new yeaw!!! >w<\e[0m"
+fi
+
+temperaure_rounded=$(echo "$weather_data" | jq -r '.main.temp' | awk '{ print int($1) }')
+if [ "$temperaure_rounded" -gt 30 ] ; then
+    echo -e "\t\e[31mthe weathew is weally hot today, make suwe u dwink enough watew!\e[0m"
+elif [ "$temperaure_rounded" -lt 15 ] ; then
+    echo -e "\t\e[34mthe weathew is weally cowd today, make suwe u dwess pwopewwy!\e[0m"
+elif [ "$temperaure_rounded" -lt -20 ] ; then
+    echo -e "\t\e[37mit's fucking fweezing outside!! take cawe and dwess pwopewly!!! TwT\e[0m"
 fi
 
 echo -e "\e[32m$(printf '%*s\n' "${COLUMNS:-$(stty size 2>/dev/null | cut -d' ' -f2)}" '' | tr ' ' =)\e[0m"
