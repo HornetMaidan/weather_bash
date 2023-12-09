@@ -17,10 +17,14 @@ v.0.3 ----- OUTDATED\
 #add ANSI/ASCII art as icons for weather descriptions(not sure yet) --- DISCARDED\
 #CLI overhaul for new features --- DONE
 
-v.1.0(initial release) ----- CURRENT\
+v.1.0(initial release) ----- OUTDATED\
 #fix the forecast showing past time data --- DONE\
 #strong wind alert --- DONE\
 #code cleaning --- DONE
+
+v.1.1 ----- CURRENT\
+#temperature alert --- DONE\
+#minor additions --- DONE
 
 further updates will be most likely only to fix something, i think this project is now complete\
 if you may experience any issue with this script or want to suggest to add something - you are more than welcome!
