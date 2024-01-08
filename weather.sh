@@ -44,7 +44,7 @@ api_key="a6c3cfde026d31b995612c6f169203a7"
 ipinfo_key="bd1acc5f04e870"
 user_ip=$(curl -s https://ifconfig.me/ip)
 
-location_info=$(curl -s https://ipinfo.io/$user_ip?token=$ipinfo_key)
+location_info=$(curl -s "https://ipinfo.io/$user_ip?token=$ipinfo_key")
 lat=$(echo "$location_info" | jq -r '.loc' | cut -d ',' -f 1)
 lon=$(echo "$location_info" | jq -r '.loc' | cut -d ',' -f 2)
 
