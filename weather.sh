@@ -40,7 +40,7 @@ pad_string() {
 
 #api requests
 
-api_key="85eea24f3dd362a3e5dc3a2b051e3452"
+api_key="1dfeef54f6e423266e0f09920919f297"
 ipinfo_key="adc827a697c024"
 user_ip=$(curl -s https://ifconfig.me/ip)
 
