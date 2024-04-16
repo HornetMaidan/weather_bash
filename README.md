@@ -1,54 +1,32 @@
-🌤️ **weather_bash**
+# weather_bash
+a simple bash script that fetches a weather report for your location right into your terminal
+-------------------------------------------------
+this is just a simple script for myself to get the current weather right in terminal,\
+but feel free to use it as you like, as it is licensed with GNU GPL v.3.0.\
+a considerable amount of uwu is present
+-------------------------------------------------
+to-do:
 
-A simple bash script that fetches a weather report for your location right into your terminal. ☔
+v.0.2 ----- OUTDATED\
+#colorcode the output --- DONE\
+#automatic detection of packet manager to install jq(at least apt/pacman/xbps/etc..) --- DONE(semi-auto preferred)\
+#uwufy everything --- DONE(though it's a constant process)
 
-#### Note:
-  - This is just a straightforward script for myself to get the current weather right in the terminal, but feel free to use it as you like. 
-It is licensed under GNU GPL v3.0. A considerable amount of uwu is present. 😎
+v.0.3 ----- OUTDATED\
+#add 24-hour forecast as an option --- DONE\
+#add ANSI/ASCII art as icons for weather descriptions(not sure yet) --- DISCARDED\
+#CLI overhaul for new features --- DONE
 
----
+v.1.0(initial release) ----- OUTDATED\
+#fix the forecast showing past time data --- DONE\
+#strong wind alert --- DONE\
+#code cleaning --- DONE
 
-### Release Information
+v.1.1 ----- CURRENT\
+#temperature alert --- DONE\
+#minor additions --- DONE
 
-Latest Release: **v1.1**
----
+further updates will be most likely only to fix something, i think this project is now complete\
+if you may experience any issue with this script or want to suggest to add something - you are more than welcome!
 
-**Todos and Dones:**
-
-***v1.1*** - **CURRENT**
-
-- Temperature alert: ✔️
-- Minor additions:   ✔️
-
-***v1.0 (initial release)*** - **DEPRECATED**
-
-- Fix the forecast showing past time data: ✔️
-- Strong wind alert:                       ✔️
-- Code cleaning:                           ✔️
-
-***v0.3*** - **DEPRECATED**
-
-- Add 24-hour forecast as an option:       ✔️
-- CLI overhaul for new features:           ✔️
-
-***v0.2*** - **DEPRECATED**
-
-- Color code the output:                   ✔️
-- Automatic detection of packet manager to install jq (at least apt/pacman/xbps/etc..) - ✔️ (semi-auto preferred)
-- Uwufy everything:                        ✔️ (though it's a constant process)
----
-
-## Anything Else to Know?
-
-Further updates will most likely only be to fix something. I think this project is now complete. If you experience any issues with this script or want to suggest adding something, you are more than welcome!
-
-**P.S: API keys are intentionally left as variables in the script so you can change them to your own or any other if they reach the request limit.**
-
----
-
-## Discarded ideas
-
-- Add ANSI/ASCII art as icons for weather descriptions
----
-
-#### 📝 This project is licensed under the GNU General Public License v3.0.
+P.S: api keys are intentionally left right in the script as variables so you can change them to your own/any other if they reach the request limit
