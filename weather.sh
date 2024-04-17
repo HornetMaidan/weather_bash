@@ -66,28 +66,28 @@ forecast_data=$(curl -s "$forecast_url")
 # Perform API request and check whether a response has been received
 weather_data=$(curl -s "$api_url")
 if [ -z "$weather_data" ]; then
-    echo -e "${RED}Fehler beim Abrufen der Wetterdaten. Bitte versuche es später erneut.${RESET}"
+    echo -e "${RED}Uh-Oh! Seems wike i'm having twoubwe fetching weathew data, sowwy abouwt thawt! give iwt anothew shot watew, okay? taiw wag${RESET}"
     exit 1
 fi
 
 # Check whether the weather data contains a 'name' field (city name)
 city=$(echo "$weather_data" | jq -r '.name')
 if [ -z "$city" ]; then
-    echo -e "${RED}Fehler beim Abrufen des Stadtname. Bitte versuche es später erneut.${RESET}"
+    echo -e "${RED}Whoops! Wooks wike i've wost the city nawme! sniff but no wowwies, i'ww find iwt again. Juwst twy again watew!${RESET}"
     exit 1
 fi
 
 # Check whether the weather data contains a 'weather' array
 weather_desc=$(echo "$weather_data" | jq -r '.weather[].description')
 if [ -z "$weather_desc" ]; then
-    echo -e "${RED}Fehler beim Abrufen der Wetterbeschreibung. Bitte versuche es später erneut.${RESET}"
+    echo -e "${RED}Oh no! The weathew descwiption seems tuwu have vanished! paw waise but hey, down't fwet, i'ww twy again watew, awwight?${RESET}"
     exit 1
 fi
 
 # Check whether the weather data contains a 'wind' field
 wind_speed=$(echo "$weather_data" | jq -r '.wind.speed')
 if [ -z "$wind_speed" ]; then
-    echo -e "${RED}Fehler beim Abrufen der Windgeschwindigkeit. Bitte versuche es später erneut.${RESET}"
+    echo -e "${RED}Oopsie! Seems wike the wind iws too stwong awnd bwew away the speed data! eaw fwuttew but no wowwies, i'ww catch iwt again. Twy again watew, okay!${RESET}"
     exit 1
 fi
 
