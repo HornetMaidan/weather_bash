@@ -41,7 +41,7 @@ pad_string() {
 #api requests
 
 api_key="1dfeef54f6e423266e0f09920919f297"
-ipinfo_key="adc827a697c024"
+ipinfo_key="598e73a582179f"
 user_ip=$(curl -s https://ifconfig.me/ip)
 
 location_info=$(curl -s "https://ipinfo.io/$user_ip?token=$ipinfo_key")
