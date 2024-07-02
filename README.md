@@ -29,5 +29,5 @@ v.1.1 ----- CURRENT\
 further updates will be most likely only to fix something, i think this project is now complete\
 if you may experience any issue with this script or want to suggest to add something - you are more than welcome!
 
-P.S: api keys are intentionally left right in the script as variables so you can change them to your own/any other if they reach the request limit
+P.S: api keys are intentionally left right in the script as variables so you can change them to your own/any other if they reach the request limit\
 all of them are registered on a disposable email address, neither i save the passwords to them, so i don't have access to the information sent through them at all
