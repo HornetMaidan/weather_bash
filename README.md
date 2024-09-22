@@ -1,33 +1,34 @@
-# weather_bash
-a simple bash script that fetches a weather report for your location right into your terminal
--------------------------------------------------
-this is just a simple script for myself to get the current weather right in terminal,\
-but feel free to use it as you like, as it is licensed with GNU GPL v.3.0.\
-a considerable amount of uwu is present
--------------------------------------------------
-to-do:
+# Weather Bash
 
-v.0.2 ----- OUTDATED\
-#colorcode the output --- DONE\
-#automatic detection of packet manager to install jq(at least apt/pacman/xbps/etc..) --- DONE(semi-auto preferred)\
-#uwufy everything --- DONE(though it's a constant process)
+A simple Bash script that fetches a weather report for your location right into your terminal.
 
-v.0.3 ----- OUTDATED\
-#add 24-hour forecast as an option --- DONE\
-#add ANSI/ASCII art as icons for weather descriptions(not sure yet) --- DISCARDED\
-#CLI overhaul for new features --- DONE
+This is just a simple script for myself to get the current weather right in the terminal, but feel free to use it as you like, as it is licensed under GNU GPL v.3.0. A considerable amount of uwu is present.
 
-v.1.0(initial release) ----- OUTDATED\
-#fix the forecast showing past time data --- DONE\
-#strong wind alert --- DONE\
-#code cleaning --- DONE
+---
 
-v.1.1 ----- CURRENT\
-#temperature alert --- DONE\
-#minor additions --- DONE
+## To-Do:
 
-further updates will be most likely only to fix something, i think this project is now complete\
-if you may experience any issue with this script or want to suggest to add something - you are more than welcome!
+### v.1.1 ----- CURRENT
+- [x] Temperature alert — **DONE**
+- [x] Minor additions — **DONE**
 
-P.S: api keys are intentionally left right in the script as variables so you can change them to your own/any other if they reach the request limit\
-all of them are registered on a disposable email address, neither i save the passwords to them, so i don't have access to the information sent through them at all
+### v.1.0 (Initial Release) ----- OUTDATED
+- [x] Fix the forecast showing past time data — **DONE**
+- [x] Strong wind alert — **DONE**
+- [x] Code cleaning — **DONE**
+
+### v.0.3 ----- OUTDATED
+- [x] Add 24-hour forecast as an option — **DONE**
+- [ ] Add ANSI/ASCII art as icons for weather descriptions (not sure yet) — **DISCARDED**
+- [x] CLI overhaul for new features — **DONE**
+
+### v.0.2 ----- OUTDATED
+- [x] Color code the output — **DONE**
+- [x] Automatic detection of packet manager to install `jq` (at least `apt`, `pacman`, `xbps`, etc.) — **DONE** (semi-auto preferred)
+- [x] Uwufy everything — **DONE** (though it's a constant process)
+
+---
+
+Further updates will likely only be to fix something; I think this project is now complete. If you experience any issues with this script or want to suggest adding something, you are more than welcome!
+
+**P.S.:** API keys are intentionally left as variables in the script so you can change them to your own or any other if they reach the request limit. All of them are registered on a disposable email address; I don't save the passwords to them, so I don't have access to the information sent through them at all.
